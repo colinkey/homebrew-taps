@@ -8,14 +8,15 @@ class Whichttp < Formula
   sha256 "ab81222ef5058e53f9fe36d129a1ba6b16831f623209f07d37428fdc9af241d8"
   license "MIT"
 
-  # depends_on "cmake" => :build
+  depends_on "crystal" => :build
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "crystal", "build" "./src/whichttp.cr"
     bin.install "whichttp"
   end
 
