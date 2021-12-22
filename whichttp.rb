@@ -17,7 +17,7 @@ class Whichttp < Formula
     system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "crystal", "build" "./src/whichttp.cr"
-    bin.install "whichttp"
+    bin.install "./whichttp"
   end
 
   test do
