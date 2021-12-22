@@ -1,21 +1,13 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Whichttp < Formula
   desc "CLI lookup tool for HTTP Status Codes"
   homepage "https://www.github.com/colinkey/whichttp"
-  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "5ed0a6b461a31b5bd6b3c8d9e96562513f9eb3d9517131ae478cfb2733488c9c"
+  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "0663d61b6ec88acd2deb98449bfe10de08a5a84949cadd55cba9564fffeb7b1e"
   license "MIT"
 
   depends_on "crystal" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "crystal", "build", "./src/whichttp.cr"
     bin.install "./whichttp"
     bin.install "src/http_status_codes.yml" => "http_status_codes.yml"
