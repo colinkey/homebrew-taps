@@ -16,8 +16,9 @@ class Whichttp < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "crystal", "build" "./src/whichttp.cr"
+    system "crystal", "build", "./src/whichttp.cr"
     bin.install "./whichttp"
+    bin.install "src/http_status_codes.yml" => "http_status_codes.yml"
   end
 
   test do
