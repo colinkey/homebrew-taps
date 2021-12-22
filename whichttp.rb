@@ -4,8 +4,8 @@
 class Whichttp < Formula
   desc "CLI lookup tool for HTTP Status Codes"
   homepage "https://www.github.com/colinkey/whichttp"
-  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ab81222ef5058e53f9fe36d129a1ba6b16831f623209f07d37428fdc9af241d8"
+  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "5ed0a6b461a31b5bd6b3c8d9e96562513f9eb3d9517131ae478cfb2733488c9c"
   license "MIT"
 
   depends_on "crystal" => :build
