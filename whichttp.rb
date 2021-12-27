@@ -1,15 +1,15 @@
 class Whichttp < Formula
   desc "CLI lookup tool for HTTP Status Codes"
   homepage "https://www.github.com/colinkey/whichttp"
-  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "a07acfb8e97754a265c4676de7bcd2e120f3e9b033ac58e4fe92a127c991b911"
+  url "https://github.com/colinkey/whichttp/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "28cbed0d1fadba10f1f9515c3668508f9b71ceed0cdd8aa374cf035449de983a"
   license "MIT"
 
   depends_on "crystal" => :build
 
   def install
-    system "crystal", "build", "./src/whichttp.cr", "--release"
-    bin.install "./whichttp"
+    system "shards", "build", "--release"
+    bin.install "./bin/whichttp"
   end
 
   test do
